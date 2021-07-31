@@ -12,8 +12,8 @@
 
 			return () => {
 				if (id === undefined) {
+					console.log("clicked");
 					id = setTimeout(() => {
-						console.log("clicked");
 						id = undefined;
 					}, delay);
 				}
