@@ -1,0 +1,23 @@
+<html>
+	<body>
+		<button id="button">Click Me</button>
+	</body>
+	<script type="text/javascript">
+		let button = document.getElementById("button");
+
+		button.addEventListener("click", throttle(5000));
+
+		function throttle(delay) {
+			let id;
+
+			return () => {
+				if (id === undefined) {
+					id = setTimeout(() => {
+						console.log("clicked");
+						id = undefined;
+					}, delay);
+				}
+			}
+		}
+	</script>
+</html>
